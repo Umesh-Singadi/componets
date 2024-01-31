@@ -1,18 +1,9 @@
-import Button from "./components/Button";
+import ButtonPage from "./pages/ButtonPage";
+
 function App() {
   return (
     <div>
-      <Button primary rounded>
-        Primary
-      </Button>
-      <Button secondary outline rounded>
-        Secondary
-      </Button>
-      <Button success outline>
-        Success
-      </Button>
-      <Button warning>Warning</Button>
-      <Button danger>Danger</Button>
+      <ButtonPage />
     </div>
   );
 }
