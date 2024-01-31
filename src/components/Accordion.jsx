@@ -1,11 +1,17 @@
+import { useState } from "react";
+
 function Accordion({ data }) {
-  const renderedItems = data.map((item) => {
+  const [expandedIndex, setExpandedIndex] = useState();
+  const renderedItems = data.map((item, index) => {
     return (
-      <div className="m-4 border-2 border-black  p-4 rounded-md">
+      <div
+        className="m-4 border-2 border-black  p-4 rounded-md"
+        onClick={() => setExpandedIndex(index === expandedIndex ? "" : index)}
+      >
         <div className="flex items-center justify-between">
           <h1>{item.label}</h1>
         </div>
-        <p>{item.content}</p>
+        {expandedIndex === index && <p>{item.content}</p>}
       </div>
     );
   });
