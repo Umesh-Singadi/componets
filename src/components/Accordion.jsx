@@ -6,10 +6,11 @@ function Accordion({ data }) {
   const renderedItems = data.map((item, index) => {
     return (
       <div
-        className="m-4 border-2 border-black  p-4 rounded-md"
+        key={item.id}
+        className="m-4 p-4 rounded-md bg-gray-50 hover:bg-gray-200 cursor-pointer"
         onClick={() => setExpandedIndex(index === expandedIndex ? "" : index)}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between font-medium ">
           <h1>{item.label}</h1>
           {expandedIndex === index ? (
             <GoChevronDown className="text-3xl" />
@@ -17,11 +18,11 @@ function Accordion({ data }) {
             <GoChevronLeft className="text-3xl" />
           )}
         </div>
-        {expandedIndex === index && <p>{item.content}</p>}
+        {expandedIndex === index && <p className="border-b">{item.content}</p>}
       </div>
     );
   });
-  return <div>{renderedItems}</div>;
+  return <div className="border border-black rounded m-4">{renderedItems}</div>;
 }
 
 export default Accordion;
