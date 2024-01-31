@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GoChevronDown, GoChevronLeft } from "react-icons/go";
 
 function Accordion({ data }) {
   const [expandedIndex, setExpandedIndex] = useState();
@@ -10,6 +11,11 @@ function Accordion({ data }) {
       >
         <div className="flex items-center justify-between">
           <h1>{item.label}</h1>
+          {expandedIndex === index ? (
+            <GoChevronDown className="text-3xl" />
+          ) : (
+            <GoChevronLeft className="text-3xl" />
+          )}
         </div>
         {expandedIndex === index && <p>{item.content}</p>}
       </div>
