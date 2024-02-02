@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
+import Panel from "./Panel";
+
 function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,18 +26,14 @@ function Dropdown({ options, value, onChange }) {
   });
   return (
     <div className="w-48 relative">
-      <div
+      <Panel
         onClick={handleClick}
-        className="flex justify-between items-center cursor-pointer border rounded p-3 shadow-lg bg-white w-full"
+        className="flex justify-between items-center cursor-pointer"
       >
         {value ? value.label : "Select..."}
         <div>{isOpen ? <GoChevronDown /> : <GoChevronLeft />}</div>
-      </div>
-      {isOpen && (
-        <div className="absolute top-full border rounded p-3 w-full shadow-lg bg-white">
-          {renderedItems}
-        </div>
-      )}
+      </Panel>
+      {isOpen && <Panel className="absolute top-full">{renderedItems}</Panel>}
     </div>
   );
 }
