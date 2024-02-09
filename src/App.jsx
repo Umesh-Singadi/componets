@@ -1,17 +1,21 @@
-import Link from "./components/Link";
 import Rout from "./components/Rout";
 import DropdownPage from "./pages/DropdownPage";
 import AccordionPage from "./pages/AccordionPage";
+import ButtonPage from "./pages/ButtonPage";
+
+import Sidebar from "./components/Sidebar";
 function App() {
   return (
-    <div>
-      <Link to="/dropdown">Dropdown</Link>
-      <Link to="/accordion">Accordion</Link>
-      <Rout path="/dropdown">
+    <div className="container mx-auto flex p-5 w-full">
+      <Sidebar></Sidebar>
+      <Rout path="/">
         <DropdownPage></DropdownPage>
       </Rout>
       <Rout path="/accordion">
         <AccordionPage></AccordionPage>
+      </Rout>
+      <Rout path="/buttons">
+        <ButtonPage></ButtonPage>
       </Rout>
     </div>
   );

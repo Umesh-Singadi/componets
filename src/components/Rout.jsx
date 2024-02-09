@@ -1,7 +1,7 @@
-import useNavigationContext from "../hooks/NavigationContext";
+import useNavigation from "../hooks/use-navigation";
 
 function Rout({ path, children }) {
-  const { currentPath } = useNavigationContext();
+  const { currentPath } = useNavigation();
   if (path === currentPath) {
     return children;
   }
