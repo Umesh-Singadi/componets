@@ -1,9 +1,10 @@
-import DropdownPage from "./pages/DropdownPage";
+import Link from "./components/Link";
 
 function App() {
   return (
     <div>
-      <DropdownPage />
+      <Link to="/dropdown">Dropdown</Link>
+      <Link to="/accordion">Accordion</Link>
     </div>
   );
 }
