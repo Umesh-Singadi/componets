@@ -2,7 +2,7 @@ import Rout from "./components/Rout";
 import DropdownPage from "./pages/DropdownPage";
 import AccordionPage from "./pages/AccordionPage";
 import ButtonPage from "./pages/ButtonPage";
-import ModelPage from "./pages/ModelPage";
+import ModalPage from "./pages/ModalPage";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <ButtonPage></ButtonPage>
       </Rout>
       <Rout path="/modal">
-        <ModelPage></ModelPage>
+        <ModalPage></ModalPage>
       </Rout>
     </div>
   );

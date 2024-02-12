@@ -12,7 +12,7 @@ function Button({
   ...rest
 }) {
   const classes = classNames(
-    "border p-2 m-2 hover:animate-bounce",
+    "border p-2 m-2",
     {
       "border-blue-500 bg-blue-500 text-black": primary,
       "border-gray-500 bg-gray-500 text-black": secondary,
