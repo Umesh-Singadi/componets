@@ -8,6 +8,7 @@ function Sidebar() {
     { textToShow: "Dropdown", path: "/" },
     { textToShow: "Accordion", path: "/accordion" },
     { textToShow: "Buttons", path: "/buttons" },
+    { textToShow: "Modal", path: "/modal" },
   ];
 
   const classes = classNames("mb-10", {

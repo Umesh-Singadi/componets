@@ -2,8 +2,9 @@ import Rout from "./components/Rout";
 import DropdownPage from "./pages/DropdownPage";
 import AccordionPage from "./pages/AccordionPage";
 import ButtonPage from "./pages/ButtonPage";
-
+import ModelPage from "./pages/ModelPage";
 import Sidebar from "./components/Sidebar";
+
 function App() {
   return (
     <div className="container mx-auto flex p-5 w-full">
@@ -16,6 +17,9 @@ function App() {
       </Rout>
       <Rout path="/buttons">
         <ButtonPage></ButtonPage>
+      </Rout>
+      <Rout path="/modal">
+        <ModelPage></ModelPage>
       </Rout>
     </div>
   );
