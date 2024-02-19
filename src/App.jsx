@@ -4,22 +4,26 @@ import AccordionPage from "./pages/AccordionPage";
 import ButtonPage from "./pages/ButtonPage";
 import ModalPage from "./pages/ModalPage";
 import Sidebar from "./components/Sidebar";
+import TablePage from "./pages/TablePage";
 
 function App() {
   return (
     <div className="container mx-auto flex p-5 w-full">
-      <Sidebar></Sidebar>
+      <Sidebar />
       <Rout path="/">
-        <DropdownPage></DropdownPage>
+        <DropdownPage />
       </Rout>
       <Rout path="/accordion">
-        <AccordionPage></AccordionPage>
+        <AccordionPage />
       </Rout>
       <Rout path="/buttons">
-        <ButtonPage></ButtonPage>
+        <ButtonPage />
       </Rout>
       <Rout path="/modal">
-        <ModalPage></ModalPage>
+        <ModalPage />
+      </Rout>
+      <Rout path="/table">
+        <TablePage />
       </Rout>
     </div>
   );
