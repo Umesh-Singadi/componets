@@ -1,11 +1,11 @@
-import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
 
 function TablePage() {
   const data = [
-    { name: "Orange", color: "bg-orange-500", score: 5 },
-    { name: "Apple", color: "bg-red-500", score: 5 },
-    { name: "Banana", color: "bg-yellow-500", score: 5 },
-    { name: "Lime", color: "bg-green-500", score: 5 },
+    { name: "Orange", color: "bg-orange-500", score: 3 },
+    { name: "Apple", color: "bg-red-500", score: 10 },
+    { name: "Banana", color: "bg-yellow-500", score: 6 },
+    { name: "Lime", color: "bg-green-500", score: 8 },
   ];
 
   const config = [
@@ -22,7 +22,7 @@ function TablePage() {
   const keyFn = (fruit) => fruit.name;
   return (
     <>
-      <Table data={data} config={config} keyFn={keyFn}></Table>
+      <SortableTable data={data} config={config} keyFn={keyFn} />
     </>
   );
 }
