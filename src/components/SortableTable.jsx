@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Table from "./Table";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null);
@@ -7,6 +8,11 @@ function SortableTable(props) {
   const { config, data } = props;
 
   const handleClick = (label) => {
+    if (sortBy && label !== sortBy) {
+      setSortOrder("ase");
+      sortBy(label);
+      return;
+    }
     if (sortOrder === null) {
       setSortOrder("ase");
       setSortBy(label);
@@ -25,7 +31,15 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>{column.label}</th>
+        <th
+          className="cursor-pointer hover:bg-gray-100"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
+        </th>
       ),
     };
   });
@@ -48,10 +62,40 @@ function SortableTable(props) {
   }
   return (
     <div>
-      {sortBy} - {sortOrder}
       <Table {...props} config={updatedConfig} data={sortedData}></Table>
     </div>
   );
 }
 
+function getIcons(label, sortBy, sortOrder) {
+  if (label !== sortBy) {
+    return (
+      <div>
+        <FaAngleUp />
+        <FaAngleDown />
+      </div>
+    );
+  }
+
+  if (sortOrder === null) {
+    return (
+      <div>
+        <FaAngleUp />
+        <FaAngleDown />
+      </div>
+    );
+  } else if (sortOrder === "ase") {
+    return (
+      <div>
+        <FaAngleUp />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <FaAngleDown />
+      </div>
+    );
+  }
+}
 export default SortableTable;
