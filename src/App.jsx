@@ -5,6 +5,7 @@ import ButtonPage from "./pages/ButtonPage";
 import ModalPage from "./pages/ModalPage";
 import Sidebar from "./components/Sidebar";
 import TablePage from "./pages/TablePage";
+import CounterPage from "./pages/CounterPage";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
       </Rout>
       <Rout path="/table">
         <TablePage />
+      </Rout>
+      <Rout path="/counter">
+        <CounterPage />
       </Rout>
     </div>
   );

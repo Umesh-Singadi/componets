@@ -10,6 +10,7 @@ function Sidebar() {
     { textToShow: "Buttons", path: "/buttons" },
     { textToShow: "Modal", path: "/modal" },
     { textToShow: "Table", path: "/table" },
+    { textToShow: "Counter", path: "/counter" },
   ];
 
   const classes = classNames("mb-10", {
