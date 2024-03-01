@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Panel from "../components/Panel";
 import Button from "../components/Button";
 
 function CounterPage() {
-  const [count, setCount] = useState(20);
+  const [count, setCount] = useState(0);
   const [valueToAdd, setValueToAdd] = useState(0);
+
+  const renderCount = useRef(0);
+  useEffect(() => {
+    renderCount.current = renderCount.current + 1;
+  });
+
+  const inputElement = useRef();
+  function focusInput() {
+    inputElement.current.focus();
+  }
+
+  const previousInputValue = useRef("");
+  useEffect(() => {
+    previousInputValue.current = count;
+  }, [count]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +40,12 @@ function CounterPage() {
 
   return (
     <Panel>
-      <h1 className="text-lg">Count is {count}</h1>
+      <div className="flex">
+        <h1 className="text-lg mr-2">Current Count : {count} </h1>
+        <h1 className="text-lg">
+          Previous Count : {previousInputValue.current}
+        </h1>
+      </div>
       <div>
         <Button onClick={increment}>Increment</Button>
         <Button onClick={decrement}>Decrement</Button>
@@ -38,9 +58,14 @@ function CounterPage() {
           onChange={handleChange}
           value={valueToAdd || ""}
           placeholder="Type..."
+          ref={inputElement}
         />
         <Button>Add it!</Button>
       </form>
+      <div>
+        <h1>Render Count is : {renderCount.current}</h1>
+        <Button onClick={focusInput}>Focus Input</Button>
+      </div>
     </Panel>
   );
 }

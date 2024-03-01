@@ -6,6 +6,7 @@ import ModalPage from "./pages/ModalPage";
 import Sidebar from "./components/Sidebar";
 import TablePage from "./pages/TablePage";
 import CounterPage from "./pages/CounterPage";
+import CounterPage2 from "./pages/CounterPage2";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
       </Rout>
       <Rout path="/counter">
         <CounterPage />
+      </Rout>
+      <Rout path="/counter2">
+        <CounterPage2 />
       </Rout>
     </div>
   );

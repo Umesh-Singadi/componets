@@ -11,8 +11,10 @@ function Sidebar() {
     { textToShow: "Modal", path: "/modal" },
     { textToShow: "Table", path: "/table" },
     { textToShow: "Counter", path: "/counter" },
+    { textToShow: "Counter2", path: "/counter2" },
   ];
 
+  // eslint-disable-next-line no-unused-vars
   const classes = classNames("mb-10", {
     "bg-red-500": currentPath,
   });
